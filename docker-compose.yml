@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  chr:
+    container_name: mikrotik-chr
+    image: evilfreelancer/docker-routeros:6.48.3
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "2222:22" #SSH
+      - "88:80" #HTTP
+      - "1194:1194" #OpenVPN
+      - "8291:8291" #Winbox
+      - "2987:8729" #API-SSL 
+      - "2887:8728" #API
+      - "50:50" #IPSec
+      - "51:51" #IPSec
+      - "500:500" #IPSec
+      - "4500:4500" #IPSec
+      - "1701:1701" #L2TP
+      - "1723:1723" #PPTP
