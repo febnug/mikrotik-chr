@@ -1,2 +1,2 @@
 # mikrotik-chr
-routeros mikrotik on docker
+run command <code>docker-compose up -d</code>
